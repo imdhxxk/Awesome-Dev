@@ -12,7 +12,7 @@ let a = 1; // 전역 스코프
 function funcA() {
     let b = 2; // 지역 스코프
     console.log(a);
-    function funcB() {} //선언 불가
+    function funcB() {} //다른 곳에 호출 불가
 }
 
 funcA(); 
