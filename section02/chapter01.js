@@ -18,7 +18,7 @@ let t5 = () => {}; // 빈 함수 (함수는 객체이므로 truthy)
 
 
 //3. 활용 사례
-function prrintName(person) {
+function printName(person) {
     if(!person) {
         console.log("person의 값이 없음");
         return;
