@@ -29,7 +29,7 @@ function cooldownFood(food, callback){
 function freezeFood(food, callback){
     setTimeout(() => {
         const freezedFood = `냉동된 ${food}`;
-        callback(freezedFood);
+        callBack(freezedFood);
     },1500);
 }
 
