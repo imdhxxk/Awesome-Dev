@@ -3,7 +3,7 @@ import './App.css'
 import Header from './components/Header'
 import Editor from './components/Editor'
 import List from './components/List'
-import { useCallback, useState, useRef, useReducer } from 'react'
+import { useCallback, useState, useRef, useReducer, createContext } from 'react'
 // import Exam from './components/Exam'
 
 const mockData = [
@@ -40,6 +40,9 @@ function reducer(state, action) {
     default: return state;
   }
 }
+
+export const TodoContext = createContext();
+console.log(TodoContext)
 
 function App() {
 
@@ -79,8 +82,18 @@ function App() {
     <div className='App'>
       {/* <Exam/> */}
       <Header/>
-      <Editor onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete}/>
+      <TodoContext.Provider value={{
+        todos,
+        onCreate,
+        onDelete,
+        onUpdate
+      }}>
+        
+        <Editor />
+        <List 
+       
+        />
+        </TodoContext.Provider>
     </div>
   )
 }
