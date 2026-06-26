@@ -17,6 +17,8 @@ const Diary = () =>{
     
     const { createdDate, emotionId, content } = curDiaryItem
     const title = getStringedDate(new Date(createdDate))
+    usePageTitle(`${params.id}번 일기`)
+
 
     return (
         <div>
